@@ -4,25 +4,17 @@
 
 # reddit-nsfw-unblocker
 
-Unblock and remove those pesky little popups and blurs to freely view NSFW content! No login required. Works with the new Reddit (Beta) UI.
+A browser extension to unblock and remove those pesky little popups and blurs to freely view NSFW content! No login required. Works with the new Reddit (Beta) UI.
 
-## Examples
+Available for [Firefox](https://addons.mozilla.org/de/firefox/addon/reddit-nsfw-unblocker/). Edge and Chrome soon<sup>TM</sup>.
 
-### For a subreddit
+## Example
 
 Before:
 ![before](assets/before.JPG)
 
 After:
 ![after](assets/after.JPG)
-
-### For a post
-
-Before:
-![before post](assets/before_post.JPG)
-
-After:
-![after post](assets/after_post.JPG)
 
 ## How it works
 
