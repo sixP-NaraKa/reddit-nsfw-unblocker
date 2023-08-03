@@ -2,18 +2,15 @@ var loaders = document.getElementsByTagName("shreddit-async-loader");
 var popup = loaders[loaders.length - 1];
 if (popup.classList.contains("theme-beta")) {
     popup.remove();
-    var breadcrumbs = document.getElementsByTagName("reddit-breadcrumbs");
     var blurElement =
-        breadcrumbs !== null && breadcrumbs !== undefined
-            ? breadcrumbs[0].nextElementSibling
-            : null;
-    if (blurElement !== null) {
+        document.getElementsByTagName("reddit-breadcrumbs")[0]
+            ?.nextElementSibling;
+    if (blurElement !== undefined) {
         blurElement.style = "";
         document.body.style = "";
 
-        var blockingContainer = document.getElementsByTagName(
-            "xpromo-nsfw-blocking-container"
-        );
-        blockingContainer[0].shadowRoot.children[1].remove();
+        document
+            .getElementsByTagName("xpromo-nsfw-blocking-container")[0]
+            ?.shadowRoot.children[1].remove();
     }
 }
