@@ -12,7 +12,7 @@
     "content_scripts": [
         {
             "run_at": "document_end",
-            "matches": ["*://*.reddit.com/r/*"],
+            "matches": ["*://*.reddit.com/r/*", "*://*.reddit.com/user/*"],
             "js": ["src/js/unblocker.js"]
         }
     ]
