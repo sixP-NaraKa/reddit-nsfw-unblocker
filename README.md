@@ -8,7 +8,7 @@ A browser extension to unblock and remove those pesky little popups and blurs to
 
 Supports `reddit.com/r/*` and `reddit.com/user/*` links. Create an issue if you want support for more links.
 
-Available for [Firefox](https://addons.mozilla.org/de/firefox/addon/reddit-nsfw-unblocker/). Edge and Chrome soon<sup>TM</sup>.
+Available for [Firefox & Firefox for Android](https://addons.mozilla.org/de/firefox/addon/reddit-nsfw-unblocker/). Edge and Chrome soon<sup>TM</sup> (maybe).
 
 ## Example
 
@@ -17,6 +17,10 @@ Before:
 
 After:
 ![after](assets/after.JPG)
+
+Also works for Firefox for Android - same behavior.
+
+When you are on the main page of a given subreddit, click on the image directly to view it - if it is a cross-post then the post will be opened and the extension will take effect.
 
 ## How it works
 
