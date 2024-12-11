@@ -21,22 +21,16 @@ function unblock() {
     var popup = loaders[loaders.length - 1];
     if (popup.classList.contains("theme-beta")) {
         popup.remove();
-        var blurElement =
-            document.getElementsByTagName("reddit-breadcrumbs")[0]
-                ?.nextElementSibling;
+        document.body.style = "";
 
-        if (blurElement !== undefined) {
-            blurElement.style = "";
-            document.body.style = "";
-
-            // on navigating from a post into a cross-post, wait a minimum amount before trying to delete the post overlay prompt
-            // because at first the element we are looking for does not seem to be loaded/present yet
-            setTimeout(() => {
-                document
-                    .getElementsByTagName("xpromo-nsfw-blocking-container")[0]
-                    ?.shadowRoot.children[1].remove();
-            }, 1);
-        }
+        // on navigating into a post or from a post into a cross-post,
+        // wait a minimum amount before trying to delete the post overlay prompt
+        // because at first the element we are looking for does not seem to be loaded/present yet
+        setTimeout(() => {
+            document
+                .getElementsByTagName("xpromo-nsfw-blocking-container")[0]
+                ?.shadowRoot.children[1].remove();
+        }, 1);
     }
 
     /**
@@ -57,8 +51,7 @@ function unblock() {
      * the "active-experiences" property of the element does not contain "untagged_blocking" and the child element.
      * Meaning the popup does not appear.
      */
-    const untaggedBlockingElement = document.getElementsByTagName(
-        "shreddit-experience-tree"
-    )[0];
+    const untaggedBlockingElement = document
+        .getElementsByTagName("shreddit-experience-tree")[0];
     untaggedBlockingElement?.remove();
 }
