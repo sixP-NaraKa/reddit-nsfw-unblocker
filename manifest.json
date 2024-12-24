@@ -1,8 +1,16 @@
 {
     "name": "Reddit NSFW Unblocker",
-    "version": "0.5.0",
-    "manifest_version": 3,
+    "version": "0.5.1",
+    "manifest_version": 2,
     "description": "Unblock and remove these pesky popups and blurs to freely view NSFW content! No login required. Made for the new Reddit (Beta) UI.",
+    "browser_specific_settings": {
+        "gecko": {
+            "strict_min_version": "58.0"
+        },
+        "gecko_android": {
+            "strict_min_version": "113.0"
+        }
+    },
     "icons": {
         "16": "src/icon/icon16.png",
         "32": "src/icon/icon32.png",
