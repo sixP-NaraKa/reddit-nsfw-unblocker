@@ -1,9 +1,10 @@
-// on page load
 unblock();
 
-// on further page navigation, in some cases needed, in others not:
-//  - when navigating from a /r/subreddit to a post, the content is loaded dynamically (and vice versa) -> extension "content_scripts" is not executed
-//  - when jumping from a post to a recommended post, then a page load is executed
+/**
+ * On further page navigation, in some cases needed, in others not:
+ *  - when navigating from a /r/subreddit to a post, the content is loaded dynamically (and vice versa) -> extension "content_scripts" is not executed
+ *  - when jumping from a post to a recommended post, then a page load is executed
+ */
 var observer = new MutationObserver(function (mutations) {
     mutations.forEach(function (mutation) {
         if (mutation.target.nodeName.toLowerCase() === "shreddit-app") {
@@ -17,15 +18,24 @@ observer.observe(document.querySelector("shreddit-app"), {
 });
 
 function unblock() {
-    var loaders = document.getElementsByTagName("shreddit-async-loader");
-    var popup = loaders[loaders.length - 1];
-    if (popup.classList.contains("theme-beta")) {
-        popup.remove();
-        document.body.style = "";
+    document.body.style = "";
 
-        // on navigating into a post or from a post into a cross-post,
-        // wait a minimum amount before trying to delete the post overlay prompt
-        // because at first the element we are looking for does not seem to be loaded/present yet
+    /**
+     * This blur element is dynamically added when navigating into a post or from a post to the subreddit.
+     * This element is not added when navigating to recommended posts.
+     * Just in case, always locate it and remove it.
+     */
+    document.querySelector("div[style*='blur(4px)']")?.remove();
+
+    var modal = document.getElementById("blocking-modal");
+    if (modal) {
+        modal.remove();
+
+        /**
+         * On navigating into a post or from a post into a cross-post,
+         * wait a minimum amount before trying to delete the post overlay prompt,
+         * because at first the element we are looking for does not seem to be loaded/present yet
+         */
         setTimeout(() => {
             document
                 .getElementsByTagName("xpromo-nsfw-blocking-container")[0]
