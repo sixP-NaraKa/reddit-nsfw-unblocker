@@ -27,21 +27,20 @@ function unblock() {
      */
     document.querySelector("div[style*='blur(4px)']")?.remove();
 
-    var modal = document.getElementById("blocking-modal");
-    if (modal) {
-        modal.remove();
+    document.getElementById("nsfw-qr-dialog")?.remove();
+    document.getElementById("blocking-modal")?.remove();
 
-        /**
-         * On navigating into a post or from a post into a cross-post,
-         * wait a minimum amount before trying to delete the post overlay prompt,
-         * because at first the element we are looking for does not seem to be loaded/present yet
-         */
-        setTimeout(() => {
-            document
-                .getElementsByTagName("xpromo-nsfw-blocking-container")[0]
-                ?.shadowRoot.children[1].remove();
-        }, 1);
-    }
+    /**
+     * On navigating into a post or from a post into a cross-post,
+     * wait a minimum amount before trying to delete the post overlay prompt,
+     * because at first the element we are looking for does not seem to be loaded/present yet
+     */
+    setTimeout(() => {
+        var blockingContainers = document.getElementsByTagName("xpromo-nsfw-blocking-container");
+        for (var container of blockingContainers) {
+            container?.shadowRoot.children[1].remove();
+        }
+    }, 1);
 
     /**
      * Remove the "untagged blocking" modal, that warns that the content is not reviewed
@@ -49,7 +48,5 @@ function unblock() {
      * This popup seems to only appear on smaller screen sizes, e.g. on mobile.
      * This can be replicated by using the browsers devtools and emulating a mobile device.
      */
-    const untaggedBlockingElement = document
-        .getElementsByTagName("xpromo-untagged-content-blocking-modal")[0];
-    untaggedBlockingElement?.remove();
+    document.getElementsByTagName("xpromo-untagged-content-blocking-modal")[0]?.remove();
 }
