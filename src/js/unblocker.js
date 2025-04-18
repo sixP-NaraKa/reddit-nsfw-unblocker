@@ -31,6 +31,15 @@ function unblock() {
     document.getElementById("blocking-modal")?.remove();
 
     /**
+     * New elements to also remove.
+     * As the IDs of the elements suggest, this seems to be desktop only.
+     * On mobile/smaller screens these elements are not present.
+     */
+    document.getElementById("nsfw-desktop-auth-blocking-modal-overlay-element")?.remove();
+    document.getElementById("nsfw-desktop-auth-blocking-modal-dialog")?.remove();
+    document.getElementById("nsfw-desktop-auth-blocking-modal")?.remove();
+
+    /**
      * On navigating into a post or from a post into a cross-post,
      * wait a minimum amount before trying to delete the post overlay prompt,
      * because at first the element we are looking for does not seem to be loaded/present yet
