@@ -20,7 +20,12 @@
     "content_scripts": [
         {
             "run_at": "document_end",
-            "matches": ["*://*.reddit.com/r/*", "*://*.reddit.com/user/*"],
+            "matches": [
+                "*://*.reddit.com/r/*",
+                "*://*.reddit.com/user/*",
+                "*://*.reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion/r/*",
+                "*://*.reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion/user/*"
+            ],
             "js": ["src/js/unblocker.js"]
         }
     ]
