@@ -6,7 +6,9 @@
 
 A browser extension to unblock and remove those pesky little popups and blurs to freely view NSFW content! No login required. Works with the new Reddit (Beta) UI.
 
-Supports `reddit.com/r/*` and `reddit.com/user/*` links, as well as the official Reddit onion. Create an issue if you want support for more.
+Supports `reddit.com/r/*` and `reddit.com/user/*` links, as well as the **official Reddit onion** (`reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion`).
+
+Create an issue if you want support for more.
 
 Available for [Firefox & Firefox for Android](https://addons.mozilla.org/de/firefox/addon/reddit-nsfw-unblocker/). Edge and Chrome soon<sup>TM</sup> (maybe).
 
