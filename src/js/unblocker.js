@@ -18,8 +18,6 @@ observer.observe(document.querySelector("shreddit-app"), {
 });
 
 function unblock() {
-    document.body.style = "";
-
     /**
      * This blur element is dynamically added when navigating into a post or from a post to the subreddit.
      * This element is not added when navigating to recommended posts.
@@ -29,8 +27,11 @@ function unblock() {
 
     document.getElementById("nsfw-qr-dialog")?.remove();
     document.getElementById("blocking-modal")?.remove();
+    document.getElementById("configured-xpromo-blocking_xpromo_nsfw_blocking")?.remove();
+    document.getElementById("configured-xpromo-blocking_xpromo_nsfw_blocking_desktop")?.remove();
 
     /**
+     * Possibly outdated:
      * New elements to also remove.
      * As the IDs of the elements suggest, this seems to be desktop only.
      * On mobile/smaller screens these elements are not present.
@@ -47,9 +48,12 @@ function unblock() {
     setTimeout(() => {
         var blockingContainers = document.getElementsByTagName("xpromo-nsfw-blocking-container");
         for (var container of blockingContainers) {
-            container?.shadowRoot.children[1].remove();
+            container?.shadowRoot.children[1]?.remove();
         }
-    }, 1);
+    }, 1);    
+    
+    document.body.style = "";
+    document.body.classList.remove("rpl-scroll-lock");
 
     /**
      * Remove the "untagged blocking" modal, that warns that the content is not reviewed
