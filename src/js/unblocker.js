@@ -61,5 +61,7 @@ function unblock() {
      * This popup seems to only appear on smaller screen sizes, e.g. on mobile.
      * This can be replicated by using the browsers devtools and emulating a mobile device.
      */
-    document.getElementsByTagName("xpromo-untagged-content-blocking-modal")[0]?.remove();
+    if (document.documentElement.getAttribute("device") === "mobile") {
+        document.getElementById("configured-xpromo-unrated_block")?.remove();
+    }
 }
