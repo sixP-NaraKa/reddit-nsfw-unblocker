@@ -1,3 +1,8 @@
+![Mozilla Add-on Version](https://img.shields.io/amo/v/reddit-nsfw-unblocker?style=for-the-badge&label=Version)
+ ![Mozilla Add-on Users](https://img.shields.io/amo/users/reddit-nsfw-unblocker?style=for-the-badge&label=Firefox+Users) ![Mozilla Add-on Downloads](https://img.shields.io/amo/dw/reddit-nsfw-unblocker?style=for-the-badge&label=Firefox+Downloads)
+
+
+
 <p align="center">
   <img src="assets/icon256.png" alt="icon"/>
 </p>
