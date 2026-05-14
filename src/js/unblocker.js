@@ -29,6 +29,7 @@ function unblock() {
     document.getElementById("blocking-modal")?.remove();
     document.getElementById("configured-xpromo-blocking_xpromo_nsfw_blocking")?.remove();
     document.getElementById("configured-xpromo-blocking_xpromo_nsfw_blocking_desktop")?.remove();
+    document.getElementById("configured-xpromo-blocking_xpromo_nsfw_blocking_desktop_cms")?.remove();
 
     /**
      * Possibly outdated:
