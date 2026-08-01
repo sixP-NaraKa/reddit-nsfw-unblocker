@@ -65,4 +65,18 @@ function unblock() {
     if (document.documentElement.getAttribute("device") === "mobile") {
         document.getElementById("configured-xpromo-unrated_block")?.remove();
     }
+
+    /**
+     * If the user is logged in via their Reddit account, an age verification popup is displayed for NSFW subreddits/posts.
+     * Not filling out this age verification (clicking on "Not now") causes the user to be redirected to the home page.
+     * Locate the popup (and the blur element) and remove it.
+     * Multiple elements have the "age-gate-interstitial" id, just in case only search for the specific <div> element by its class and checking its id.
+     */
+    var rplDialogs = document.getElementsByClassName("rpl-dialog");
+    for (var element of rplDialogs) {
+        if (element.id === "age-gate-interstitial") {
+            element.remove();
+        }
+    }
+    document.querySelector("div[style*='blur(12px)']")?.style.removeProperty("filter");
 }
