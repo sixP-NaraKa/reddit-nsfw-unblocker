@@ -29,7 +29,7 @@ Also works for Firefox for Android - same behavior.
 
 When you are on the main page of a given subreddit, click on the image directly to view it - if it is a cross-post then the post will be opened and the extension will take effect.
 
-The extension also removes the "Unreviewed Content" popup, which appears on smaller screen sizes (e.g. on mobile):
+The extension (0.4.0+) also removes the "Unreviewed Content" popup, which appears on smaller screen sizes (e.g. on mobile):
 
 Before:
 
@@ -38,6 +38,8 @@ Before:
 After:
 
 ![after (unreviewed content)](assets/unreviewed_content_popup_after.png)
+
+Additionally, for some users (when logged into Reddit) an age-verification popup is displayed, prompting the user to verify their age. This popup is also removed to resume normal browsing.
 
 ## How it works
 
