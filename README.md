@@ -39,8 +39,6 @@ After:
 
 ![after (unreviewed content)](assets/unreviewed_content_popup_after.png)
 
-Additionally, for some users (when logged into Reddit) an age-verification popup is displayed, prompting the user to verify their age. This popup is also removed to resume normal browsing.
-
 ## How it works
 
 It simply manipulates the DOM - removes elements responsible for the popup and blur, re-enables scrolling and removes a NSFW prompt/warning inside the video player.
